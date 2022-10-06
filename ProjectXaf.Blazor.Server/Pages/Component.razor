@@ -1,0 +1,18 @@
+﻿@using DevExpress.ExpressApp.Blazor.Components
+
+<link href="css/site.css" rel="stylesheet" />
+<SplashScreenComponent>
+    <LoadingIndicator>
+       
+        <img width=250 class="rounded text-white p-3" src="./images/LogoBayer.svg" />
+        <h2>NetPilar</h2>
+        <br />
+        <br />
+        <span class="loader"></span>
+        
+    </LoadingIndicator>
+</SplashScreenComponent>
+@code {
+    [CascadingParameter(Name = "ImagePath")]
+    protected string ImagePath { get; set; }
+}
