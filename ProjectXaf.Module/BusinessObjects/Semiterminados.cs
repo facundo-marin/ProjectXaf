@@ -32,6 +32,7 @@ namespace ProjectXaf.Module.BusinessObjects
         string origen;
         string descripcion;
         int codigo;
+        private XPCollection<AuditDataItemPersistent> audiTrail;
 
         public int Codigo
         {
@@ -61,6 +62,19 @@ namespace ProjectXaf.Module.BusinessObjects
         {
             get => condicionAlmacenamiento;
             set => SetPropertyValue(nameof(CondicionAlmacenamiento), ref condicionAlmacenamiento, value);
+        }
+
+        [CollectionOperationSet(AllowAdd = false, AllowRemove = false)]
+        public XPCollection<AuditDataItemPersistent> AudiTrail
+        {
+            get
+            {
+                if(audiTrail == null)
+                {
+                    audiTrail = AuditedObjectWeakReference.GetAuditTrail(Session, this);
+                }
+                return audiTrail;
+            }
         }
 
     }
