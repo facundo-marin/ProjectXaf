@@ -10,8 +10,8 @@ app {
 .header-logo {
     flex-shrink: 0;
     background-color: currentColor;
-    -webkit-mask: url('../images/lol.svg');
-    mask: url('../images/lol.svg');
+    -webkit-mask: url('../images/LogoNetPilar.svg');
+    mask: url('../images/LogoNetPilar.svg');
     -webkit-mask-position: center;
     mask-position: center;
     mask-size:auto;
